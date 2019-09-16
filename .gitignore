@@ -1,0 +1,16 @@
+<<<<<<< HEAD
+venv
+.idea/
+
+=======
+.idea/
+venv/
+db.sqlite3
+.sqlite3
+_pycache_
+_pycache_/
+*.pyc
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
+>>>>>>> 654d4ee1932d34e8c68c4444c1e474067b454aa7
