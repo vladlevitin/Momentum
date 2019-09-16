@@ -1,0 +1,2 @@
+# Momentum-
+Momentum was as school project I have worked in a team with 5 other members to create a website using the Django framework. Momentum is a website that connects Norwegian startups, investors and job seekers. Users of the site can register as one of these and post information that is of interest to others. Examples are interests, and biography. Momentum is created using Django v2.1.7, Python v3.5 and an SQLite 3 database. The team has used the Python IDE PyCharm for development.
