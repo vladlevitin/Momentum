@@ -1,0 +1,186 @@
+{% extends "news/base.html" %}
+
+{% block javascript %}
+<script>
+
+    function nameFunction() {
+      // Declare variables
+      var input, filter, table, tablerow, rowname, i, txtValue;
+      input = document.getElementById("nameInput");
+      filter = input.value.toUpperCase();
+      tablerow = document.getElementsByClassName("list-group-item");
+
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tablerow.length; i++) {
+        rowname = tablerow[i].getElementsByTagName("rowname")[0];
+        if (rowname) {
+          txtValue = rowname.textContent || rowname.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tablerow[i].style.display = "";
+          } else {
+            tablerow[i].style.display = "none";
+          }
+        }
+      }
+    }
+
+    $(document).ready(function(){                       // Handles checkbox clicks and adds value as filter
+
+            $('input[type="checkbox"]').click(function() {               // Checks document for classes equal to
+                var inputValue = $(this).attr("value");                  // checkbox value and toggles result table
+                var checkedBoxes = $('input[type="checkbox"]:checked');
+                var sumBoxes = $('input[type="checkbox"]');
+                var checkedSector = $('input[name="sector"]:checked');
+                var checkedIndustry = $('input[name="industry"]:checked');
+                var checkedStatus = $('input[name="status"]:checked');
+                var filters = [], i;
+
+
+                if (checkedBoxes.length === 0 || sumBoxes.length === checkedBoxes.length) {
+                    $(".list-group-item").show();
+                } else {
+                    if (checkedSector.length === 0) {
+                        $.each($("input[name='sector']"), function () {
+                            filters.push($(this).val());
+                        });
+                    }
+                    if (checkedIndustry.length === 0) {
+                        $.each($("input[name='industry']"), function () {
+                            filters.push($(this).val());
+                        });
+                    }
+                    if (checkedStatus.length === 0) {
+                        $.each($("input[name='status']"), function () {
+                            filters.push($(this).val());
+                        });
+                    }
+                    filters.push($(this).val());
+
+                    for (i=0; i<filters.length; i++) {
+
+                    }
+                    if ($("." + inputValue).is(':visible') && checkedBoxes.length !== 0) {
+                        if ($(this).prop("checked") == true) {
+                            $(".list-group-item").not("." + inputValue).hide();
+                        }
+                        else if ($(this).prop("checked") == false) {
+                            $("." + inputValue).toggle();
+                        }
+                    }
+                    else if ($("." + inputValue).is(':hidden') && checkedBoxes.length !== 0) {
+                        if ($(this).prop("checked") == true) {
+                            $("." + inputValue).toggle();
+                        }
+                        else if ($(this).prop("checked") == false) {
+                            $("." + inputValue).hide();
+                        }
+                    }
+                    else {
+                        $(".list-group-item").hide();
+                    }
+                }
+            });
+    });
+
+    window.addEventListener( "pageshow", function ( event ) {       // Restores checkbox checks if user
+        var historyTraversal = event.persisted ||                   // clicks "back" in browser
+                             ( typeof window.performance != "undefined" &&
+                                  window.performance.navigation.type === 2 );
+        if ( historyTraversal ) {
+            window.location.reload();
+        }
+    });
+
+    </script>
+{% endblock %}
+
+{% block content %}
+
+{% if user.is_startup %}
+
+{% endif %}
+<form id="checkboxes" method="get">
+
+    <div class="row">
+        <div class="col-md-4">
+            {% if user.is_startup %}
+                <a class="btn btn-primary form-control" href="{% url 'job_create' %}">Utlys Jobb</a>
+            {% endif %}
+            <div class="content-section">
+                <input class="form-control" type="text" id="nameInput"
+                       onkeyup="nameFunction()" placeholder="Søk på stillingsnavn..">
+                <hr>
+                <div class="col-sm-8">
+                  <small><b>Type</b></small>
+                  <div>
+                    {% for choice in all_types %}
+                      <input type="checkbox" name="type" value="type_{{ choice.id }}">    {{ choice.tag }}
+                          <br/>
+                    {% endfor %}
+                  </div>
+                </div>
+                <hr>
+                <div class="form-group col-sm-8">
+                  <small><b>Sektor</b></small>
+                  <div>
+                    {% for choice in all_pop %}
+                      <input type="checkbox" name="pop" value="pop_{{ choice.id }}">    {{ choice.tag }}
+                          <br/>
+                    {% endfor %}
+                  </div>
+                </div>
+                <hr>
+                <div class="form-group col-md-9">
+                  <small><b>Industry</b></small>
+                  <div>
+                    {% for choice in all_fields %}
+                      <input type="checkbox" name="field" value="field_{{ choice.id }}">    {{ choice.tag }}
+                          <br/>
+                    {% endfor %}
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <result class="list-group" id="resultTable">
+            {% if jobs %}
+            <ul>
+                {% for job in jobs %}
+                  <!--<a href={{startup.user.username}} class="list-group-item list-group-item-action">-->
+                  <a href="{% url 'job_detail' pk=job.pk %}" name="container"
+                     class="list-group-item list-group-item-action type_{{ job.type.id }}
+                     field_{{ job.field.id }} pop_{{ job.pub_or_priv.id }}">
+                      <div class="row">
+                          <div class="col-md-4">
+                              <img class="account-img" src="{{ job.employer.startup_profile.image.url }}" alt="no image">
+                          </div>
+                        <div class="col-md-8">
+                            <rowname class="h5" style="color: #333333" id="name">{{ job.position }}</rowname>
+                            {% if job.description|length > 100 %}
+                                <p>{{ job.description|slice:"0:100" }} ...</p>
+                            {% else %}
+                                <p>{{ job.description }}</p>
+                            {% endif %}
+                            <hiddenattribute hidden>{{ job.type }} {{ job.field }} {{ job.pub_or_priv }}</hiddenattribute>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <p><b>Stilling:</b> {{ job.type }}</p>
+                                </div>
+                                <div class="col-md-5">
+                                    <p><b>Frist:</b> {{ job.deadline|date:"d.m" }}</p>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                  </a>
+                {% endfor%}
+                </ul>
+                {% else %}
+                    <h3>Ingen registrerte jobber</h3>
+                {% endif %}
+            </result>
+        </div>
+    </div>
+</form>
+
+{% endblock content%}

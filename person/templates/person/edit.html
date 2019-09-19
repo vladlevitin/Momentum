@@ -1,0 +1,98 @@
+ {% extends "news/base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+    <div class="content-section">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Rediger profil</legend>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <div class="form-container">
+                        <div class="row">
+                            <div class="col-4">
+                                {{ u_form.username |as_crispy_field }}
+                            </div>
+                            <div class="col-8">
+                                {{ u_form.email |as_crispy_field }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class=col-4">
+                                {{ p_form.name |as_crispy_field }}
+                            </div>
+                            <div class="col-8">
+                                {{ p_form.address |as_crispy_field }}
+                            </div>
+                        </div>
+
+                        {{ p_form.birthday | as_crispy_field }}
+                        {{ p_form.occupation | as_crispy_field }}
+                        {{ p_form.bio |as_crispy_field }}
+                        {{ p_form.image |as_crispy_field }}
+                    </div>
+
+                    <div class="form-container">
+                        <legend class="border-bottom mb-4">Oppdater jobberfaring</legend>
+
+                        <div class="row">
+                            <div class="col">
+                                {{ p_form.work_employer |as_crispy_field }}
+                            </div>
+
+                            <div class="col">
+                                {{ p_form.work_position |as_crispy_field }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                {{ p_form.work_type |as_crispy_field }}
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            {{ p_form.work_description |as_crispy_field }}
+                        </div>
+                    </div>
+
+                    <div class="form-container">
+                        <legend class="border-bottom mb-4">Oppdater Utdanning</legend>
+
+                        <div class="row">
+                            <div class="col">
+                                {{ p_form.edu_started |as_crispy_field }}
+                            </div>
+
+                            <div class="col">
+                                {{ p_form.edu_ended |as_crispy_field }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                {{ p_form.edu_title |as_crispy_field }}
+                            </div>
+
+                            <div class="col">
+                                {{ p_form.edu_location |as_crispy_field }}
+                            </div>
+                        </div>
+
+                        <div class="col"-4>
+                            {{ p_form.edu_type |as_crispy_field }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-outline-info" type="submit">Oppdater</button>
+                    </div>
+                </form>
+            </fieldset>
+        </form>
+    </div>
+{% endblock content%}

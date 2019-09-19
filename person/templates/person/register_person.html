@@ -1,0 +1,43 @@
+{% extends "news/base.html" %}
+{% load crispy_forms_tags %}
+
+
+
+
+
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Registrer din bruker!</legend>
+                <div id="div_id_username" class="form-group">
+                        <label for="id_username" class="col-form-label  requiredField">
+                            Brukernavn<span class="asteriskField">*</span> </label>
+                        <div class="">
+                            <input type="text" name="username" maxlength="150" autofocus class="textinput textInput form-control" required id="id_username">
+                            <small id="hint_id_username" class="form-text text-muted">Påkrevd. 150 karakterer eller mindre. Kun bruk bokstaver, tall og @/./+/-/_.</small>
+                        </div>
+                    </div>
+                <div id="div_id_email" class="form-group"> <label for="id_email" class="col-form-label  requiredField">
+                Email<span class="asteriskField">*</span> </label>
+                    <div class=""> <input type="email" name="email" class="emailinput form-control" required id="id_email"></div>
+                </div>
+            <div id="div_id_password1" class="form-group"> <label for="id_password1" class="col-form-label  requiredField">
+                Passord<span class="asteriskField">*</span> </label> <div class=""> <input type="password" name="password1" class="textinput textInput form-control" required id="id_password1">
+                <small id="hint_id_password1" class="form-text text-muted"><ul>
+                    <li>Passordet ditt kan ikke være for likt annen personinfo.</li>
+                    <li>Passordet må ha minst 8 karakterer.</li>
+                    <li>Passordet kan ikke være et ofte brukt passord.</li>
+                    <li>Passordet kan ikke være utelukkende numerisk.</li>
+                </ul></small> </div> </div> <div id="div_id_password2" class="form-group"> <label for="id_password2" class="col-form-label  requiredField">
+                Gjenta Passord<span class="asteriskField">*</span> </label>
+            <div class=""> <input type="password" name="password2" class="textinput textInput form-control" required id="id_password2">
+                <small id="hint_id_password2" class="form-text text-muted">Oppgi samme passord som før, for verifikasjon.</small> </div> </div>
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Registrer deg</button>
+            </div>
+        </form>
+    </div>
+{% endblock content%}

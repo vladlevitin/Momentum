@@ -1,0 +1,178 @@
+{% load static %}
+
+<!-- Skal få csrf-token til å fungere...? -->
+{% csrf_token %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS - include the static -> news -> main.css file -->
+    <link rel="stylesheet" type="text/css" href="{% static 'news/main.css' %}">
+
+    <meta charset="UTF-8">
+
+    <link rel="icon" type="image/ico" href="/static/news/favicon.ico">
+    {% if title %}
+        <title>Momentum - {{ title }}</title>
+    {% else %}
+        <title>Momentum</title>
+    {% endif %}
+</head>
+<body>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <div class="container">
+          <a href="/">
+              <img src="http://127.0.0.1:8000/static/news/alt_logo.png" alt="Momentum logo"
+                   style="width:80px;height:50px;border:0; padding-right: 30px"> <!-- text logo 220x40, 40padding -->
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
+                  aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+              <a class="nav-item nav-link" href="{% url 'browse_startup' %}">STARTUPS</a>
+                <a class="nav-item nav-link" href="{% url 'browse_investor' %}">INVESTORER</a>
+                <a class="nav-item nav-link" href="{% url 'browse_jobs' %}">JOBS</a>
+            </div>
+
+            <!-- Navbar Right Side -->
+              <!-- Direct login on right side -->
+              <ul class="nav navbar-nav navbar-right">
+
+                  <!-- IF STATEMENT that controls what buttons show up in the menu depending on login -->
+                  {% if user.is_authenticated %}
+
+                      {% if user.is_startup %}
+                        <a class="nav-item nav-link" href="{% url 'startup_profile' %}">Profil</a>
+                      {% elif user.is_investor %}
+                        <a class="nav-item nav-link" href="{% url 'investor_profile' %}">Profil</a>
+                      {% else %}
+                        <a class="nav-item nav-link" href="{% url 'person_profile' %}">Profil</a>
+                      {% endif %}
+
+                      <a class="nav-item nav-link" href="{% url 'logout' %}">Logg ut</a>
+                  {% else  %}
+                    <li class="dropdown">
+                        <a href="#" class="btn btn-default" data-toggle="modal" data-target="#login-modal" role="button" aria-haspopup="true" aria-expanded="false">
+                            <span style="color: #6b6b6b;">Har du konto? <b>Logg inn</b></span>
+                        </a>
+                    </li>
+                  {% endif %}
+              </ul>
+              {% block header %}{% endblock header %}
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Code for login-collapse-->
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Innlogging</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                <div class="loginmodal-container">
+                    <!-- action links to login - login links to home.-->
+                    <form class="navbar-form" method="POST" action="{% url 'login' %}">
+
+                        {% csrf_token %}
+
+                        <input name="next" value="/" hidden>
+
+                        <div class="form-group">
+                            <input class="form-control" autofocus="" id="id_username"  name="username" style="width: 100%"
+                                   required="" placeholder="Brukernavn" type="text">
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="form-group">
+                            <input id="id_password" name="password" required="" type="password"
+                                   class="form-control" placeholder="Passord">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary form-control" type="submit"
+                                    style="...">Logg inn
+                            </button>
+                        </div>
+                        <div class="dropdown show">
+                          <a class="btn btn-primary form-control" href="#" role="button" id="dropdownMenuLink"
+                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Ny bruker? Registrer deg her
+                          </a>
+
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="/register_startup"><img src="http://127.0.0.1:8000/static/news/startup_icon.png"
+                                alt="Icon" style="width:20px;height:15px;border:0;padding-right: 5px">Startup</a>
+                            <a class="dropdown-item" href="/register_investor"><img src="http://127.0.0.1:8000/static/news/investor_icon.png"
+                                alt="Icon" style="width:20px;height:15px;border:0;padding-right: 5px">Investor</a>
+                            <a class="dropdown-item" href="/register_person"><img src="http://127.0.0.1:8000/static/news/person_icon.png"
+                                alt="Icon" style="width:20px;height:15px;border:0;padding-right: 5px">Privatperson</a>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+         </div>
+    </div>
+
+    <main role="main" class="container">
+      <div class="row">
+        <div class="col-md-10">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        {% block content %}{% endblock %}
+        </div>
+      </div>
+    </main>
+    <hr>
+    <footer class="bd-footer text-muted">
+        <div class="container-fluid p-3 p-md-3">
+            <div class="row">
+                <u1 class="bd-footer-links" style="padding-left: 40px">
+                    <a href="/">
+                        <img src="http://127.0.0.1:8000/static/news/textlogo_under.png" alt="Momentum logo"
+                       style="width:53px;height:60px;border:0;">
+                    </a>
+                </u1>
+                <div class="col-md-3">
+                    <div class="h5" style="padding-left: 40px">Momentum</div>
+                    <div class="p" style="padding-left: 40px">Østre Rosten 20</div>
+                    <div class="p" style="padding-left: 40px">7075 Tiller, Trondheim</div>
+                </div>
+                <div class="col-md-8" style="text-align: right">
+                    <div class="small">Copyright 2019</div>
+                    <div class="h5" style="padding-left: 40px">Momentum AS</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Optional JavaScript -->
+    {% block javascript %}{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% extends "news/base.html" %}
+
+
+{% block header %}
+
+{% endblock header %}
+
+
+{% block content %}
+
+    <div class="media">
+        <img class="d-block w-100" height="200" src="{{ event.image.url }}" alt="no image">
+    </div>
+    <br/>
+    <div class="col-md-13">
+        <div class="content-section">
+            <h5 style="text-align: center; color: #444444; text-transform: uppercase"><b>{{ event.title }}</b></h5>           <!-- Most recent events listed (5 most recent) -->
+            <hr>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="content-section">
+                        <p><b>Tid: </b>{{ event.event_time |date:"d.m Y, H:i" }}</p>
+                        <p><b>Sted: </b>{{ event.place }}</p>
+                        <span><b>Arrangør: </b>
+                        <a href="http://localhost:8000/startups/{{ event.author.username }}"
+                           style="text-align: center; color: #444444">{{ event.author.username }}</a>
+                        </span>
+                        <hr>
+                        <a href="{{ event.event_link }}" style="text-align: center; color: #444444"><b>Påmelding og mer info</b></a>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <p>{{ event.description|linebreaks }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,105 @@
+{% extends "news/base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-3">
+            <div class="content-section">
+                <div class="media">
+                 <img class="account-img" src="{{ user.startup_profile.image.url }}" alt="no image" align="middle">
+                </div>
+
+                <div>
+                    <h5 align="center">{{ user.startup_profile.name}}</h5>
+                </div>
+                <hr>
+                <br/>
+
+                <p><b>CEO: </b>{{ user.startup_profile.ceo}}</p>
+
+                <p><b>Antall Ansatte:  </b>{{ user.startup_profile.employees}}</p>
+
+                <p><b>Status: </b> {{ user.startup_profile.status}}</p>
+
+                <p><b>Sektor: </b> {{ user.startup_profile.sector}}</p>
+
+                <p><b>Industri: </b> {{ user.startup_profile.industry}}</p>
+
+                <a class="article-title" href="{{ user.startup_profile.startup_link }}"><b>Hjemmeside</b></a>
+                <br/>
+                <hr>
+                <a class="btn btn-primary form-control" href="{% url 'edit_startup' %}">Rediger profil</a>
+                <br/><br/>
+                <a class="btn btn-primary form-control" href="{% url 'job_create' %}">Utlys Jobb</a>
+
+
+            </div>
+            <div class="content-section">
+                <b>Jobber: </b>
+                    {% if all_jobs %}
+                        {% for job in all_jobs %}
+                            {% if job.employer == user %}
+                                <a href="{% url 'job_detail' pk=job.id %}" class="list-group-item list-group-item-action">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <div class="place-time-container">
+                                            <img height="25" alt="No image" src="{{ job.employer.startup_profile.image.url }}">
+                                        </div>
+                                        <div class="place-content w-100">
+                                            <span class="p"><b>{{ job.position }}</b></span><br/>
+                                        </div>
+                                    </div>
+                                </a>
+                            {% endif %}
+                        {% endfor %}
+                    {% else %}
+                        <b>Ingen jobber</b>
+                    {% endif %}
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="content-section">
+                <h4 style="text-align: center">Om oss</h4>
+                <hr>
+                <p class="text-secondary">{{ user.startup_profile.bio|linebreaks }}</p>
+             </div>
+            <div class="content-section">
+                <p><b>Adresse:</b> {{ user.startup_profile.address}}</p>
+                <hr>
+
+                <head>
+                    <meta charset="utf-8">
+                    <style>
+                        #map {
+                            max-width: 100%;
+                            height: 40%;
+                        }
+                    </style>
+                </head>
+
+                <div id="map"></div>
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ1Pg7lnVTZrd8YUJQHrmlPQCD49IfWIs"></script>
+                    <script>
+                          map = new google.maps.Map(document.getElementById('map'), {
+                          center: {lat: {{ user.startup_profile.latitude}}, lng: {{ user.startup_profile.longitude}}}, <!-- CHANGE THE COORDINATES HERE -->
+                          zoom: 12
+                            });
+
+                    function addMarker(lat, lng, title) {
+                        var position = new google.maps.LatLng(lat, lng);
+                        var marker = new google.maps.Marker({
+                            position: position,
+                            map: map,
+                            title: title
+                        });
+
+                    }
+                    addMarker({{ user.startup_profile.latitude}}, {{ user.startup_profile.longitude}}, "Your location");
+                    </script>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock content%}

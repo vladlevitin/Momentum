@@ -1,0 +1,57 @@
+{% extends "news/base.html" %}
+
+{% block content %}
+
+<div id="content">
+
+            <div class="row space-below">
+                <div class="col-xs-12 space-above">
+                    <div class="white-box" id="text-box">
+                        <div class="alert alert-danger" role="alert">
+                            <strong> Feil brukernavn/passord.</strong> Du må logge inn for å se denne siden!
+                        </div>
+
+
+                        <form method="POST" action="{% url 'login' %}">
+                            <input name="next" value="/" hidden>
+
+                            {% csrf_token %}
+
+                            <div class="form-group">
+                                <label for="id_username">Brukernavn:</label>
+                                <input type="text" name="username" autofocus="" class="form-control" maxlength="254" required="" id="id_username" placeholder="Brukernavn">
+                            </div>
+                            <div class="form-group">
+                                <label for="id_password">Passord:</label>
+                                <input type="password" name="password" class="form-control" required="" id="id_password" placeholder="Passord">
+                            </div>
+                            <button type="submit" value="login" class="btn btn-primary form-control">Logg inn</button>
+                            <input type="hidden" name="next" value="/">
+
+                            <br/>
+                            <br/>
+
+                            <div class="dropdown show">
+                                 <a class="btn btn-primary form-control" href="#" role="button" id="dropdownMenuLink"
+                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Ny bruker? Registrer deg her
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="/register_startup"><img src="http://127.0.0.1:8000/static/news/startup_icon.png"
+                                    alt="Icon" style="width:20px;height:15px;border:0;padding-right: 5px">Startup</a>
+                                    <a class="dropdown-item" href="/register_investor"><img src="http://127.0.0.1:8000/static/news/investor_icon.png"
+                                    alt="Icon" style="width:20px;height:15px;border:0;padding-right: 5px">Investor</a>
+                                    <a class="dropdown-item" href="/register_person"><img src="http://127.0.0.1:8000/static/news/person_icon.png"
+                                    alt="Icon" style="width:20px;height:15px;border:0;padding-right: 5px">Privatperson</a>
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+</div>
+
+{% endblock %}

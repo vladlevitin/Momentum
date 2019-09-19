@@ -1,0 +1,90 @@
+{% extends "news/base.html" %}
+{% load crispy_forms_tags %}
+
+{%block content%}
+
+<article class="media content-section">
+    <div class="media-body">
+
+        <div class="row">
+            <div class="col-md-3">
+                <img src="{{ object.employer.startup_profile.image.url }}" style="height: 190px">
+            </div>
+            <div class="col-md-6">
+                <h2 class="article-title">{{ object.position }}</h2>
+                <a class="h5 article-title" href="{% url 'visit_startup' pk=object.employer.id %}">{{ object.employer.startup_profile.name  }} </a>
+                <br/>
+                <br/>
+                <p class="text-secondary">{{ object.description }}</p>
+                <br/>
+            </div>
+            <div class="col-md-3">
+                <small class="text-muted">Postet: {{object.date_posted|date:"d.m, Y" }}</small>
+                <br/>
+                <br/>
+                <p class="text-secondary"><b>Søknadsfrist:</b> {{ object.deadline|date:"d.m, Y" }}</p>
+                <p class="text-secondary"><b>Type:</b> {{ object.type}}</p>
+                <p class="text-secondary"><b>Tiltredelse:</b> {{ object.start }}</p>
+            </div>
+        </div>
+    </div>
+
+
+
+ </article>
+  {%if not user.is_startup and not user.is_investor and user.is_authenticated%}
+
+     <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#text" role="button" aria-haspopup="true" aria-expanded="false"> Søk på jobb </button>
+
+
+      <div class="modal fade" id="text" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" >
+            <div class="modal-content" style="width: 500px; height: 500px;">
+
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel" align="center"> Søknad på stilling: {{object.position}} </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <form>
+                        <div>
+                            <textarea style="width: 470px; height: 350px;"  class="form-control"  placeholder="Skriv inn søknadsteksten . . ."></textarea>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                   <div>
+                            <button class="btn btn-outline-info"  type="submit" id="jobsearch"  data-toggle="collapse" data-target="#texting" role="button" aria-haspopup="true" aria-expanded="false"
+                            style="width: 94%; position: absolute; left: 17px; top: 447px; ">Send Søknad</button>
+                         </div>
+
+
+                        <div class="collapse"  id="texting" aria-hidden="true" >
+                            <div class="alert alert-success" style="top: -28px">
+                                <div>
+                                    <strong >Vellykket!</strong> Søknaden din har blitt sendt.
+                                </div>
+                                <div>
+                                    <a href="http://127.0.0.1:8000/jobs/browse/">Tilbake til Jobs </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                </div>
+            </div>
+         </div>
+    </div>
+
+  {%elif user.is_startup and user == object.employer %}
+
+      <button class="btn btn-outline-info"  onclick="window.location.href='{%url 'job_update' object.id%}'"> Oppdater Jobben </button>
+      <button class="btn btn-outline-info"  onclick="window.location.href='{%url 'job_delete' object.id%}'"> Slett Jobben </button>
+
+
+  {% endif %}
+
+
+{% endblock content%}

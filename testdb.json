@@ -1,0 +1,1548 @@
+[
+{
+  "model": "users.status_interest",
+  "pk": 1,
+  "fields": {
+    "tag": "Id\u00e9fasen"
+  }
+},
+{
+  "model": "users.status_interest",
+  "pk": 2,
+  "fields": {
+    "tag": "Prototypefasen"
+  }
+},
+{
+  "model": "users.status_interest",
+  "pk": 3,
+  "fields": {
+    "tag": "Produksjon"
+  }
+},
+{
+  "model": "users.industry",
+  "pk": 1,
+  "fields": {
+    "tag": "IT"
+  }
+},
+{
+  "model": "users.industry",
+  "pk": 2,
+  "fields": {
+    "tag": "Olje og gass"
+  }
+},
+{
+  "model": "users.industry",
+  "pk": 3,
+  "fields": {
+    "tag": "Helse og omsorg"
+  }
+},
+{
+  "model": "users.industry",
+  "pk": 4,
+  "fields": {
+    "tag": "Produktutvikling"
+  }
+},
+{
+  "model": "users.sector",
+  "pk": 1,
+  "fields": {
+    "tag": "Offentlig"
+  }
+},
+{
+  "model": "users.sector",
+  "pk": 2,
+  "fields": {
+    "tag": "Privat"
+  }
+},
+{
+  "model": "users.status",
+  "pk": 1,
+  "fields": {
+    "tag": "Id\u00e9fasen"
+  }
+},
+{
+  "model": "users.status",
+  "pk": 2,
+  "fields": {
+    "tag": "Prototypefasen"
+  }
+},
+{
+  "model": "users.status",
+  "pk": 3,
+  "fields": {
+    "tag": "Produksjon"
+  }
+},
+{
+  "model": "users.type",
+  "pk": 4,
+  "fields": {
+    "tag": "Fulltid"
+  }
+},
+{
+  "model": "users.type",
+  "pk": 5,
+  "fields": {
+    "tag": "Deltid"
+  }
+},
+{
+  "model": "users.pub_or_priv",
+  "pk": 1,
+  "fields": {
+    "tag": "Offentlig"
+  }
+},
+{
+  "model": "users.pub_or_priv",
+  "pk": 2,
+  "fields": {
+    "tag": "Privat"
+  }
+},
+{
+  "model": "users.field",
+  "pk": 1,
+  "fields": {
+    "tag": "Produktutvikling"
+  }
+},
+{
+  "model": "users.field",
+  "pk": 2,
+  "fields": {
+    "tag": "Helse og omsorg"
+  }
+},
+{
+  "model": "users.field",
+  "pk": 3,
+  "fields": {
+    "tag": "Olje og gass"
+  }
+},
+{
+  "model": "users.field",
+  "pk": 4,
+  "fields": {
+    "tag": "IT"
+  }
+},
+{
+  "model": "news.slideshow",
+  "pk": 1,
+  "fields": {
+    "title": "slide1",
+    "image": "slideshow_pics/stock1_mhSUB8O.jpg",
+    "slide_link": "http://localhost:8000/"
+  }
+},
+{
+  "model": "news.slideshow",
+  "pk": 2,
+  "fields": {
+    "title": "slide2",
+    "image": "slideshow_pics/stock3_TAAnWmb.jpg",
+    "slide_link": "http://localhost:8000/"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 1,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 1,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 1,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 1,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add field",
+    "content_type": 2,
+    "codename": "add_field"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change field",
+    "content_type": 2,
+    "codename": "change_field"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete field",
+    "content_type": 2,
+    "codename": "delete_field"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view field",
+    "content_type": 2,
+    "codename": "view_field"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add industry",
+    "content_type": 3,
+    "codename": "add_industry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change industry",
+    "content_type": 3,
+    "codename": "change_industry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete industry",
+    "content_type": 3,
+    "codename": "delete_industry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view industry",
+    "content_type": 3,
+    "codename": "view_industry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add job",
+    "content_type": 4,
+    "codename": "add_job"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change job",
+    "content_type": 4,
+    "codename": "change_job"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete job",
+    "content_type": 4,
+    "codename": "delete_job"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view job",
+    "content_type": 4,
+    "codename": "view_job"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add pub_or_priv",
+    "content_type": 5,
+    "codename": "add_pub_or_priv"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change pub_or_priv",
+    "content_type": 5,
+    "codename": "change_pub_or_priv"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete pub_or_priv",
+    "content_type": 5,
+    "codename": "delete_pub_or_priv"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view pub_or_priv",
+    "content_type": 5,
+    "codename": "view_pub_or_priv"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add sector",
+    "content_type": 6,
+    "codename": "add_sector"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change sector",
+    "content_type": 6,
+    "codename": "change_sector"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete sector",
+    "content_type": 6,
+    "codename": "delete_sector"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view sector",
+    "content_type": 6,
+    "codename": "view_sector"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add status",
+    "content_type": 7,
+    "codename": "add_status"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change status",
+    "content_type": 7,
+    "codename": "change_status"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete status",
+    "content_type": 7,
+    "codename": "delete_status"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view status",
+    "content_type": 7,
+    "codename": "view_status"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add status_interest",
+    "content_type": 8,
+    "codename": "add_status_interest"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change status_interest",
+    "content_type": 8,
+    "codename": "change_status_interest"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete status_interest",
+    "content_type": 8,
+    "codename": "delete_status_interest"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view status_interest",
+    "content_type": 8,
+    "codename": "view_status_interest"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add type",
+    "content_type": 9,
+    "codename": "add_type"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change type",
+    "content_type": 9,
+    "codename": "change_type"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete type",
+    "content_type": 9,
+    "codename": "delete_type"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view type",
+    "content_type": 9,
+    "codename": "view_type"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add investor",
+    "content_type": 10,
+    "codename": "add_investor"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change investor",
+    "content_type": 10,
+    "codename": "change_investor"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete investor",
+    "content_type": 10,
+    "codename": "delete_investor"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view investor",
+    "content_type": 10,
+    "codename": "view_investor"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add person",
+    "content_type": 11,
+    "codename": "add_person"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change person",
+    "content_type": 11,
+    "codename": "change_person"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete person",
+    "content_type": 11,
+    "codename": "delete_person"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view person",
+    "content_type": 11,
+    "codename": "view_person"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add startup",
+    "content_type": 12,
+    "codename": "add_startup"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change startup",
+    "content_type": 12,
+    "codename": "change_startup"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete startup",
+    "content_type": 12,
+    "codename": "delete_startup"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view startup",
+    "content_type": 12,
+    "codename": "view_startup"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can add event",
+    "content_type": 13,
+    "codename": "add_event"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can change event",
+    "content_type": 13,
+    "codename": "change_event"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can delete event",
+    "content_type": 13,
+    "codename": "delete_event"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can view event",
+    "content_type": 13,
+    "codename": "view_event"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 53,
+  "fields": {
+    "name": "Can add post",
+    "content_type": 14,
+    "codename": "add_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 54,
+  "fields": {
+    "name": "Can change post",
+    "content_type": 14,
+    "codename": "change_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 55,
+  "fields": {
+    "name": "Can delete post",
+    "content_type": 14,
+    "codename": "delete_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 56,
+  "fields": {
+    "name": "Can view post",
+    "content_type": 14,
+    "codename": "view_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 57,
+  "fields": {
+    "name": "Can add slideshow",
+    "content_type": 15,
+    "codename": "add_slideshow"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 58,
+  "fields": {
+    "name": "Can change slideshow",
+    "content_type": 15,
+    "codename": "change_slideshow"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 59,
+  "fields": {
+    "name": "Can delete slideshow",
+    "content_type": 15,
+    "codename": "delete_slideshow"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 60,
+  "fields": {
+    "name": "Can view slideshow",
+    "content_type": 15,
+    "codename": "view_slideshow"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 61,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 16,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 62,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 16,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 63,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 16,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 64,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 16,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 65,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 17,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 66,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 17,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 67,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 17,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 68,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 17,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 69,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 18,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 70,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 18,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 71,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 18,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 72,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 18,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 73,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 19,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 74,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 19,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 75,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 19,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 76,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 19,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 77,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 20,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 78,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 20,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 79,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 20,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 80,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 20,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "users.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$120000$LL0njD9zjPUV$klrfqQYyf/EZXZef7g0BE6ua22IBf/LyIQ8U4V168uQ=",
+    "last_login": "2019-04-10T20:15:50.034Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@momentum.no",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2019-04-10T19:01:08.311Z",
+    "is_startup": false,
+    "is_investor": false,
+    "is_person": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$120000$bqFacu82sT61$kFJ/tszS6GxnJO3HVGhd2ASZfqrVxqL85VTdiIlbUeE=",
+    "last_login": "2019-04-10T19:45:24.083Z",
+    "is_superuser": false,
+    "username": "revolve",
+    "first_name": "",
+    "last_name": "",
+    "email": "revolve@test.no",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2019-04-10T19:45:14.327Z",
+    "is_startup": true,
+    "is_investor": false,
+    "is_person": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$120000$u2q0FxLlyT2b$PABWuVU4t6RFTHj/LxHrED+rmawcjWqVUhrmdzV2NwY=",
+    "last_login": "2019-04-10T19:51:38.534Z",
+    "is_superuser": false,
+    "username": "gobi",
+    "first_name": "",
+    "last_name": "",
+    "email": "gobi@test.no",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2019-04-10T19:51:31.865Z",
+    "is_startup": true,
+    "is_investor": false,
+    "is_person": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$120000$7pJpezJzmESi$OrYA8pA8CeJsk7xtAJYMMU/sJUPpzFy2lmcPUzdZew4=",
+    "last_login": "2019-04-10T19:56:41.020Z",
+    "is_superuser": false,
+    "username": "strawberry",
+    "first_name": "",
+    "last_name": "",
+    "email": "strawberry@test.no",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2019-04-10T19:56:33.860Z",
+    "is_startup": false,
+    "is_investor": true,
+    "is_person": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.startup",
+  "pk": 2,
+  "fields": {
+    "name": "NTNU Revolve",
+    "image": "profile_pics/Revolve_NTNU_4yBDFqY.png",
+    "sector": 1,
+    "address": "H\u00f8gskoleringen 3",
+    "startup_link": "https://revolve.no/",
+    "industry": 4,
+    "status": 3,
+    "employees": 70,
+    "bio": "Revolve NTNU er NTNU sitt Formula Student-team og ble etablert i 2010. Team 2018 best\u00e5r av 72 studenter fra 15 ulike fagretninger ved universitetet, f\u00f8rst og fremst ulike sivilingeni\u00f8rstudier, som blant annet produktutvikling og produksjon (maskin), bygg- og milj\u00f8teknikk, elektronikk, datateknologi, teknisk kybernetikk, energi og milj\u00f8, og industriell \u00f8konomi. Organisasjonen er en frivillig non-profit studentorganisasjon. Kongsberg Gruppen er prosjektets hovedsamarbeidspartner, sammen med Bertel O. Steen som kom med i prosjektet i 2017. Revolve NTNU deltok for f\u00f8rste gang i Formula Student i 2012 og det var da et gjensidig samarbeid med Petter Solberg og Petter Solberg Engineering.\r\n\r\nHvert \u00e5r designes, utvikles og bygges en ny formulabil med det form\u00e5l \u00e5 delta i Formula Student som avholdes hver sommer. Revolve NTNU deltar blant annet p\u00e5 Formula Student UK, som avholdes p\u00e5 Formel 1-banen Silverstone i Storbritannia i regi av Institution of Mechanica.",
+    "ceo": "Karoline Halvorsen",
+    "latitude": 63.4181823,
+    "longitude": 10.4036407
+  }
+},
+{
+  "model": "users.startup",
+  "pk": 3,
+  "fields": {
+    "name": "Gobi",
+    "image": "profile_pics/gobi-logo-05_rqHdTHX.png",
+    "sector": 2,
+    "address": "Gina Kroghs vei, 7045 Trondheim",
+    "startup_link": "https://gobiapp.com/",
+    "industry": 1,
+    "status": 2,
+    "employees": 12,
+    "bio": "We deliver production and distribution tools \r\nfor content in the story format, \r\nallowing our customers to leverage the format \r\non their own platforms and websites.\r\n\r\n\"P\u00e5 verdensbasis har Gobi-appen blitt lastet ned over 70 000 ganger. If\u00f8lge selskapet er rundt 30 prosent av disse aktive brukere. \r\n\r\nDet vil si at Gobi-appen har 21 000 aktive brukere i alle sine markeder, basert p\u00e5 selskapets eget tallmateriale.\r\n\r\n\u2013 Det er veldig bra, og har gjort det mulig for oss \u00e5 hente den kapitalen vi har. Ingen ville investert i dette hvis vi ikke kunne skiltet med en s\u00e5 stor brukermasse, argumenterer daglig leder Kristoffer Lande til digi.no. \"",
+    "ceo": "Kristoffer Lande",
+    "latitude": 63.4265771,
+    "longitude": 10.4351809
+  }
+},
+{
+  "model": "users.investor",
+  "pk": 4,
+  "fields": {
+    "name": "Strawberry",
+    "image": "profile_pics/strawberry.png",
+    "bio": "\u00abSelg de b\u00e6ra du har, for de er de eneste b\u00e6ra du kan selge\u00bb, sa faren min til meg da jeg var tolv \u00e5r. I dag symboliserer jordb\u00e6ret mer enn arven fra faren min. Det representerer reisen fra torget i Porsgrunn og frem til i dag. Menneskene og selskapene, som med grensesprengende ideer og gjennomf\u00f8ringskraft, har skapt mitt businessunivers - Strawberry. Og ikke minst, representerer b\u00e6ret v\u00e5r halsbrekkende ambisjon om \u00e5 skape Nordens mest b\u00e6rekraftige investeringsselskap.",
+    "address": "Aker Brygge",
+    "email2": "petter@penger.no",
+    "investor_link": "https://strawberry.no/",
+    "interest": null,
+    "status_interest": 1,
+    "latitude": 59.9113412,
+    "longitude": 10.7181683
+  }
+},
+{
+  "model": "users.person",
+  "pk": 1,
+  "fields": {
+    "name": "Ola",
+    "image": "default.jpg",
+    "birthday": "1995-06-12",
+    "occupation": "Student",
+    "address": "Nordmann",
+    "bio": "Administrerer Momentum p\u00e5 fritiden, studerer ellers.",
+    "edu_started": "2017-08-20",
+    "edu_ended": "2022-06-10",
+    "edu_location": "NTNU Gl\u00f8shaugen",
+    "edu_title": "Datateknologi",
+    "edu_type": "Master",
+    "work_employer": "Momentum",
+    "work_position": "Produkttester",
+    "work_description": "Har testet programvare i faget TDT4140.",
+    "work_type": "Deltid"
+  }
+},
+{
+  "model": "users.job",
+  "pk": 1,
+  "fields": {
+    "employer": 3,
+    "email": "gobi@test.no",
+    "position": "Frontend developer",
+    "description": "Vi \u00f8nsker motiverte folk som elsker mye jobb og kaffe.",
+    "deadline": "2019-06-10",
+    "type": 4,
+    "start": "2019-08-31",
+    "date_posted": "2019-04-10T19:55:32.274Z",
+    "pub_or_priv": null,
+    "field": null,
+    "city": null
+  }
+},
+{
+  "model": "news.post",
+  "pk": 1,
+  "fields": {
+    "title": "How Iterate works with startups",
+    "fp_image": "news_pics/OceanChallenge_Torleif_Kvinnesland__MG_8858_EBLOkC6.jpg",
+    "image": "news_pics/OceanChallenge_Torleif_Kvinnesland__MG_8858_sSen0dI.jpg",
+    "preface": "Many great founders with skills, knowledge and a great idea miss just one essential piece to get started\u200a\u2014\u200athe builders. Our coders, designers and entrepreneurs team up with founders to build, from first prototype to early product, and help recruit their first complete founding team in the process. And of course, we provide mentoring, office space, funding, community and network with other startups and investors.",
+    "content": "Why we do it\r\n\u200dIterate\u00b4s mission is to build innovators. We build our own workforce, and we believe that we can help others as well, by being the missing piece for getting great startups started.\r\n\r\nHow we do it\r\nFor your startup to move fast, you have to learn fast. How do you do this with digital products? Our approach is to build prototypes and MVPs and get them in front of users. We are highly skilled at lean experiments, where we build products and test them on real users\u200a\u2014\u200aat the same time. We have developed our own method, founded on lean philosophy, sprints, and design thinking.\r\n\r\nThe process\r\n\u200dWhen we meet founders, we look for three things: Team, mindset and idea. In our opinion you need a skilled team, an idea with great potential and the right mindset to succeed with your startup. We have tried the traditional way to do screening with long pitch decks, comprehensive business plans and fancy presentations\u200a\u2014\u200aall with mixed result. Our experience is that enough coffee, an honest conversation and then working together for a period gives both us and the team a much better way to decide how far we want to go together.\r\n\r\nCoffee\r\n\u200dWe like coffee. And in our experience, sharing a coffee is usually a good way to start a partnership. No pitching, no selling, no convincing. Just an open and honest conversation about the idea, the team and about how and if we believe we can help.",
+    "date_posted": "2019-04-10T19:37:47Z",
+    "author": 1
+  }
+},
+{
+  "model": "news.post",
+  "pk": 2,
+  "fields": {
+    "title": "Ny samarbeidsavtale mellom UiO og Equinor",
+    "fp_image": "news_pics/OceanChallenge_Torleif_Kvinnesland__MG_8806.jpg",
+    "image": "news_pics/OceanChallenge_Torleif_Kvinnesland__MG_8806_LSt3X3U.jpg",
+    "preface": "Equinor ASA og Universitetet i Oslo (UiO) har inng\u00e5tt en ny fem\u00e5rig samarbeidsavtale som inneb\u00e6rer at UiO f\u00e5r tilf\u00f8rt 10 millioner kroner pr. \u00e5r til og med 2023. Form\u00e5let med avtalen er \u00e5 stimulere grunnforskning og utdanning innenfor strategiske fag- og kompetanseomr\u00e5der som er viktige b\u00e5de for UiO og Equinor.",
+    "content": "Den nye samarbeidsavtalen har en klar profil som er innrettet mot fremtidens energil\u00f8sninger, samtidig som den underst\u00f8tter UiOs brede satsing p\u00e5 fornybar energi gjennom det tverrfaglige satsingsomr\u00e5det UiO:Energi. Avtalen fokuserer p\u00e5 fire temaer: Energi- og klimarett, maskinl\u00e6ring, str\u00f8mning i geologiske strukturer, og nye energisystemer.\r\n\r\n\u2013 Den nye avtalen videref\u00f8rer et langsiktig og godt samarbeid som vi har hatt stor glede av ved UiO. De tidligere avtalene mellom UiO og dav\u00e6rende Statoil har fokusert p\u00e5 forskningen ved det matematisk-naturvitenskapelige fakultetet v\u00e5rt. N\u00e5 er vi veldig glade for at vi den nye avtalen ogs\u00e5 omfatter et fagmilj\u00f8 ved det juridiske fakultetet, sa UiOs rektor Svein St\u00f8len f\u00f8r han undertegnet avtalen.\r\n\r\n\u2013 Denne avtalen reflekterer at Equinor ikke er det samme selskapet som Statoil var for fem \u00e5r siden. N\u00e5 er vi p\u00e5 vei fra \u00e5 ha v\u00e6rt et hovedsakelig olje- og gass-selskap til \u00e5 bli et bredt energiselskap med stor vekt p\u00e5 fornybar energi. Det er viktig for oss \u00e5 v\u00e6re med p\u00e5 \u00e5 bygge grunnkompetanse p\u00e5 de nye omr\u00e5dene, sa Stein Olav Drange, fungerende forsknings- og teknologidirekt\u00f8r i Equinor.",
+    "date_posted": "2019-04-10T19:39:13Z",
+    "author": 1
+  }
+},
+{
+  "model": "news.post",
+  "pk": 3,
+  "fields": {
+    "title": "Hjelper norske bedrifter i USA",
+    "fp_image": "news_pics/19954_en_1_TvwDgxQ.jpg",
+    "image": "news_pics/19391_en_1_VTz4hOu.jpg",
+    "preface": "Nordic Innovation House jobber ogs\u00e5 med \u00e5 avlive myte om Silicon Valley.",
+    "content": "PALO ALTO (Nettavisen): Et steinkast unna hovedgaten University Avenue i det lille bysentrumet i Palo Alto, ligger kontorene til Nordic Innovation House.\r\n\r\nInnovasjonshuset, som ble initiert av Innovasjon Norge i 2011, tar sikte p\u00e5 \u00e5 hjelpe nordiske oppstartbedrifter og selskaper med \u00e5 f\u00e5 en fot innenfor i Silicon Valley.\r\n\r\n- M\u00e5let v\u00e5rt er \u00e5 f\u00e5 nordiske selskaper til \u00e5 vokse basert p\u00e5 de mulighetene de har i dette markedet, og bringe verdiene tilbake til Norden, sier regionsdirekt\u00f8r for Amerika i Innovasjon Norge, Gro Dyrnes.\r\n\r\nOverrasket over tempoet\r\nNettavisen m\u00f8ter Dyrnes i lokalene til Nordic Innovation House, som hun er leder for. Innovasjonshuset best\u00e5r ogs\u00e5 av et kontorfellesskap som er tilgjengelig for medlemmene n\u00e5r de er p\u00e5 bes\u00f8k.\r\n\r\nRegionen som kalles Silicon Valley er kjent som hovedstaden for innovasjon og h\u00f8yteknologiutvikling. Det er et ekstremt konkurranseutsatt marked, der ting ofte gj\u00f8res annerledes enn i Norge.",
+    "date_posted": "2019-04-10T19:40:53Z",
+    "author": 1
+  }
+},
+{
+  "model": "news.event",
+  "pk": 1,
+  "fields": {
+    "title": "Pecha-Kucha",
+    "image": "event_pics/stock3.jpg",
+    "event_link": "https://www.facebook.com/events/270422787213669/",
+    "description": "Pecha Kucha, PechaKucha (japansk \u30da\u30c1\u30e3\u30af\u30c1\u30e3 - for \u00ablyden av folk som snakker\u00bb) og Pecha Kucha Night er en presentasjonsform og et kulturarrangement der programmet best\u00e5r av opptil 12-14 korte multimedia-presentasjoner. Hver deltager kan vise 20 bilder, men bare bruke 20 sekunder p\u00e5 hvert. Foredragsholderne har alts\u00e5 bare 6 minutter og 40 sekunder p\u00e5 \u00e5 fremf\u00f8re sitt innlegg f\u00f8r neste deltaker entrer scenen. Formatet gj\u00f8r at presentasjonene blir konsentrerte og underholdende. Opplegget ble utarbeidet av Astrid Klein og Mark Dytham i Tokyo i 2003.",
+    "event_time": "2019-04-24T20:00:00Z",
+    "place": "FRAM NTNU",
+    "author": 1
+  }
+},
+{
+  "model": "news.event",
+  "pk": 2,
+  "fields": {
+    "title": "Infokveld for Startups",
+    "image": "event_pics/stock2.jpeg",
+    "event_link": "https://www.facebook.com/events/270422787213669/",
+    "description": "A startup or start up is a company initiated by individual founders or entrepreneurs to search for a repeatable and scalable business model. Founders design startups to effectively develop and validate a scalable business model.[1][2] Hence, the concepts of startups and entrepreneurship are similar. However, entrepreneurship refers all new businesses, including self-employment and businesses that never intend to grow big or become registered, while startups refer to new businesses that intend to grow beyond the solo founder, have employees, and intend to grow large.[citation needed] Start ups face high uncertainty[3] and do have high rates of failure, but the minority that go on to be successful companies have the potential to become large and influential.[4] Some startups become unicorns, i.e. privately held startup companies valued at over $1 billion.",
+    "event_time": "2019-05-16T18:00:00Z",
+    "place": "Work-Work",
+    "author": 1
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2019-04-10T19:09:20.987Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "1",
+    "object_repr": "IT",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2019-04-10T19:09:24.488Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "2",
+    "object_repr": "Olje og gass",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2019-04-10T19:09:28.182Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "3",
+    "object_repr": "Helse og omsorg",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2019-04-10T19:09:42.479Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "4",
+    "object_repr": "Produktutvikling",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2019-04-10T19:09:59.385Z",
+    "user": 1,
+    "content_type": 2,
+    "object_id": "1",
+    "object_repr": "Produktutvikling",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2019-04-10T19:10:01.917Z",
+    "user": 1,
+    "content_type": 2,
+    "object_id": "2",
+    "object_repr": "Helse og omsorg",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2019-04-10T19:10:04.919Z",
+    "user": 1,
+    "content_type": 2,
+    "object_id": "3",
+    "object_repr": "Olje og gass",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2019-04-10T19:10:08.550Z",
+    "user": 1,
+    "content_type": 2,
+    "object_id": "4",
+    "object_repr": "IT",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2019-04-10T19:10:18.246Z",
+    "user": 1,
+    "content_type": 5,
+    "object_id": "1",
+    "object_repr": "Offentlig",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2019-04-10T19:10:22.746Z",
+    "user": 1,
+    "content_type": 5,
+    "object_id": "2",
+    "object_repr": "Privat",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2019-04-10T19:10:33.424Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "1",
+    "object_repr": "Offentlig",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2019-04-10T19:10:36.327Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "2",
+    "object_repr": "Privat",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2019-04-10T19:10:48.809Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "Id\u00e9fasen",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2019-04-10T19:10:51.979Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "Prototypefasen",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2019-04-10T19:11:06.979Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "3",
+    "object_repr": "Produksjon",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2019-04-10T19:11:17.016Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "1",
+    "object_repr": "Id\u00e9fasen",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2019-04-10T19:11:23.450Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "2",
+    "object_repr": "Prototypefasen",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2019-04-10T19:11:28.466Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "3",
+    "object_repr": "Produksjon",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2019-04-10T19:11:44.543Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Id\u00e9fasen",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2019-04-10T19:11:48.456Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "Prototypefasen",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2019-04-10T19:11:52.297Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "Produksjon",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2019-04-10T19:31:45.396Z",
+    "user": 1,
+    "content_type": 15,
+    "object_id": "1",
+    "object_repr": "slide1",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2019-04-10T19:31:59.845Z",
+    "user": 1,
+    "content_type": 15,
+    "object_id": "2",
+    "object_repr": "slide2",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2019-04-10T19:36:44.366Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "1",
+    "object_repr": "Pecha-Kucha",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2019-04-10T19:37:42.467Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "2",
+    "object_repr": "Infokveld for Startups",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2019-04-10T19:39:13.336Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "1",
+    "object_repr": "How Iterate works with startups",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2019-04-10T19:40:52.984Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "2",
+    "object_repr": "Ny samarbeidsavtale mellom UiO og Equinor",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2019-04-10T19:43:13.879Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "3",
+    "object_repr": "Hjelper norske bedrifter i USA",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2019-04-10T19:51:03.565Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "3",
+    "object_repr": "Produksjon",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2019-04-10T19:51:03.575Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "2",
+    "object_repr": "Prototypefasen",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2019-04-10T19:51:03.584Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "1",
+    "object_repr": "Id\u00e9fasen",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2019-04-10T19:51:09.145Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "4",
+    "object_repr": "Fulltid",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2019-04-10T19:51:12.646Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "5",
+    "object_repr": "Deltid",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+}
+]

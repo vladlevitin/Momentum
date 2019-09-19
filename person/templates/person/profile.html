@@ -1,0 +1,72 @@
+{% extends "news/base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-3">
+            <div class="content-section">
+                <div class="media">
+                    <img class="rounded-circle account-img" src="{{ user.person_profile.image.url }}" alt="no image">
+                </div>
+                <div>
+                    <h5 align="center">{{ user.person_profile.name}}</h5>
+                </div>
+                <hr>
+                <br/>
+
+                <p><b>Født: </b>{{ user.person_profile.birthday}}</p>
+                <p><b>Yrkesstatus: </b>{{ user.person_profile.occupation}}</p>
+                <p><b>Bio: </b>{{ user.person_profile.bio}}</p>
+                <div>
+                <a class="btn btn-primary form-control" href="{% url 'edit_person' %}">Rediger profil</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="content-section">
+               <h5>Nyeste jobberfaring</h5>
+               <hr>
+               <p><b>Arbeidsgiver: </b> {{ user.person_profile.work_employer }} </p>
+               <div class="row">
+                   <div class=col">
+                       <p><b>Stillingstittel: </b>{{ user.person_profile.work_position }} </p>
+                   </div>
+
+                   <div class="col">
+                       <p><b>Stillingstype: </b>{{ user.person_profile.work_type }} </p>
+                   </div>
+               </div>
+
+                <p><b>Beskrivelse: </b>{{ user.person_profile.work_description }} </p>
+
+            </div>
+
+            <div class="content-section">
+               <h5>Nyeste utdanning</h5>
+               <hr>
+
+                <div class="row">
+                    <div class=col">
+                        <p><b>Startet: </b>{{ user.person_profile.edu_started }} </p>
+                    </div>
+                    <div class="col">
+                        <p><b>Sluttet: </b>{{ user.person_profile.edu_ended }} </p>
+                    </div>
+                </div>
+                <p><b>Utdanningssted:</b>{{ user.person_profile.edu_location }} </p>
+                <p><b>Tittel: </b>{{ user.person_profile.edu_title }} </p>
+                <p><b>Grad: </b>{{ user.person_profile.edu_type }} </p>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+{% endblock content%}

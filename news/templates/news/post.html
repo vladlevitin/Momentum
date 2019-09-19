@@ -1,0 +1,28 @@
+{% extends "news/base.html" %}
+
+
+{% block header %}
+
+{% endblock header %}
+
+
+{% block content %}
+
+    <div class="media">
+        <img class="d-block w-100" height="400" src="{{ newspost.image.url }}" alt="no image">
+    </div>
+    <br/>
+    <div class="col-md-13">
+        <div class="content-section">
+            <h3 style="text-align: center; color: #444444; text-transform: uppercase">
+                <b>{{ newspost.title }}</b></h3>
+            <br/>
+            <div class="col-md-12"><b>{{ newspost.preface|linebreaks}}</b></div>
+            <hr>
+            <div class="small" style="float: right">{{ newspost.date_posted |date:"d.m Y, H:i" }}</div>
+            <br/>
+            <div class="col-md-12">{{ newspost.content|linebreaks }}</div>
+        </div>
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,65 @@
+{% extends "news/base.html" %}
+
+
+{% block header %}
+
+{% endblock header %}
+
+
+{% block content %}
+
+    {% regroup events by event_time.month as events_list %}
+        <div class="col-md-10">
+            <div class="content-section">
+                {% for event in events_list %}
+                    <div class="h5" style="text-align: center">
+                        {% if event.grouper == 1 %}
+                            <p>JANUAR</p><hr>
+                            {% elif event.grouper == 2 %}
+                                <p>FEBRUAR</p><hr>
+                            {% elif event.grouper == 3 %}
+                                <p>MARS</p><hr>
+                            {% elif event.grouper == 4 %}
+                                <p>APRIL</p><hr>
+                            {% elif event.grouper == 5 %}
+                                <p>MAI</p><hr>
+                            {% elif event.grouper == 6 %}
+                                <p>JUNI</p><hr>
+                            {% elif event.grouper == 7 %}
+                                <p>JULI</p><hr>
+                            {% elif event.grouper == 8 %}
+                                <p>AUGUST</p><hr>
+                            {% elif event.grouper == 9 %}
+                                <p>SEPTEMBER</p><hr>
+                            {% elif event.grouper == 10 %}
+                                <p>OKTOBER</p><hr>
+                            {% elif event.grouper == 11 %}
+                                <p>NOVEMBER</p><hr>
+                            {% elif event.grouper == 12 %}
+                                <p>DESEMBER</p><hr>
+                        {% endif %}
+                    </div>
+                    {% for event in event.list %}
+                      <div class="list-group">
+                          <a href="{% url 'news_event' pk=event.id %}" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <div class="place-time-container">
+                                        <span class="h5">{{ event.event_time |date:"d.m"}}</span>
+                                        <span class="p">{{ event.event_time |date:"H:i"}}</span>
+                                    </div>
+                                    <div class="place-content w-100">
+                                        <span class="h5"><b>{{ event.title }}</b></span><br/>
+                                        <span class="p">{{ event.place }}</span>
+                                    </div>
+                                </div>
+                            </a>
+                    {% endfor %}
+                    <br/>
+                  </div>
+                {% endfor %}
+            </div>
+        </div>
+
+
+
+{% endblock content %}
