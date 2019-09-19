@@ -1,0 +1,113 @@
+{% extends "news/base.html" %}
+
+{% block javascript %}
+<script>
+
+    function nameFunction() {
+      // Declare variables
+      var input, filter, table, tablerow, rowname, i, txtValue;
+      input = document.getElementById("nameInput");
+      filter = input.value.toUpperCase();
+      tablerow = document.getElementsByClassName("list-group-item");
+
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tablerow.length; i++) {
+        rowname = tablerow[i].getElementsByTagName("rowname")[0];
+        if (rowname) {
+          txtValue = rowname.textContent || rowname.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tablerow[i].style.display = "";
+          } else {
+            tablerow[i].style.display = "none";
+          }
+        }
+      }
+    }
+
+    $(document).ready(function(){                       // Handles checkbox clicks and adds value as filter
+        $('input[type="checkbox"]').click(function(){   // Checks document for classes equal to
+            var inputValue = $(this).attr("value");     // checkbox value and toggles result table
+            var checkedBoxes = $('input[type="checkbox"]:checked');
+            var sumBoxes = $('input[type="checkbox"]');
+
+            if (checkedBoxes.length === 0 || sumBoxes.length === checkedBoxes.length) {
+                $(".list-group-item").show();
+            } else if (checkedBoxes.length === 1 && $(this).prop("checked") == true) {
+                $(".list-group-item").hide();
+                $("." + inputValue).show();
+            } else {
+                $("." + inputValue).toggle();
+            }
+        });
+    });
+
+
+    window.addEventListener( "pageshow", function ( event ) {       // Restores checkbox checks if user
+        var historyTraversal = event.persisted ||                   // clicks "back" in browser
+                             ( typeof window.performance != "undefined" &&
+                                  window.performance.navigation.type === 2 );
+        if ( historyTraversal ) {
+            window.location.reload();
+        }
+    });
+
+    </script>
+{% endblock %}
+
+
+{% block content %}
+<form id="checkboxes" method="get">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="content-section">
+                <input class="form-control" type="text" id="nameInput"
+                       onkeyup="nameFunction()" placeholder="Søk på navn..">
+                <hr>
+                <div class="col-md-9">
+                  <small><b>Interests</b></small>
+                  <div>
+                    {% for choice in all_status %}
+                      <input type="checkbox" name="status" value="status_{{ choice.id }}">    {{ choice.tag }}
+                        <br/>
+                    {% endfor %}
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="list-group">
+            {% if all_investor %}
+            <ul>
+                {% for investor in all_investor %}
+                  <a href="{% url 'visit_investor' pk=investor.pk %}" name="container"
+                     class="list-group-item list-group-item-action status_{{ investor.status_interest.id }}">
+                      <div class="row">
+                          <div class="col-md-4">
+                              <img class="account-img" src="{{ investor.image.url }}" alt="no image">
+                          </div>
+                        <div class="col-md-8">
+                            <rowname class="h5" style="color: #333333" id="name">{{ investor.name }}</rowname><br/>
+                            <small>Interessert i Startups i <b>{{ investor.status_interest }}</b></small><br/>
+                            {% if investor.bio|length > 120 %}
+                                <p>{{ investor.bio|slice:"0:120" }} ...</p>
+                            {% else %}
+                                <p>{{ investor.bio }}</p>
+                            {% endif %}
+                            <hiddenattribute hidden>{{ investor.status_interest }}</hiddenattribute>
+                            <!--<industryfield hidden>{{ startup.industry }}</industryfield>
+                            <statusfield hidden>{{ startup.status }}</statusfield>-->
+                        </div>
+                      </div>
+                  </a>
+                {% endfor%}
+                </ul>
+                {% else %}
+                    <h3>Ingen investorer</h3>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</form>
+
+{% endblock content%}
+
